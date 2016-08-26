@@ -76,7 +76,7 @@
 
 	function videoURL( $object, $box ) { ?>
 	    <p>
-			<label for="url-video" style="margin-right: 10px;">URL do Vídeo: </label>
+			<label for="url-video" style="margin-right: 10px;">Código do Vídeo: </label>
 			<input name="url-video" id="url-video" style="width: 100%; max-width: 900px;" value="<?php echo wp_specialchars( get_post_meta( $object->ID, 'URL do Vídeo', true ), 1 ); ?>" />
 		</p>
 	<?php }

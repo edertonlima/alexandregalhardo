@@ -31,19 +31,30 @@
 		<session class="full-portfolio">
 			<div class="container">
 
-				<?php echo do_shortcode("[huge_it_gallery id='1']"); ?>
-
-<?php /*				<?php $images = get_field('fotos');
+				<?php 
+				$images = get_field('fotos');
+				$restrito_ativo = get_field('senha_acesso_restrito');
+				$url_restrita = get_field('url_restrita');
 				if( $images ): ?>
 
 					<div class="isotope">
 						<div class="grid-sizer"></div>
 
-						<?php foreach( $images as $image ): ?>
+						<?php 
+						$qtd_foto = 0;
+						$restrito = false;
+						foreach( $images as $image ): 
+							$qtd_foto = $qtd_foto+1;
+							if(($qtd_foto > 10) and ($restrito_ativo!='')){ 
+								$restrito = true;
+							}  ?>
 
-							<div class="item motion-graphics photography">
+							<div class="item motion-graphics photography<?php if($restrito){ echo ' restrito'; } ?>">
 								<figure>
-									<a href="<?php echo $image['url']; ?>" class="modal" rel="<?php echo $post->ID; ?>">
+									<span class="restrito">
+										<?php echo $image['title']; ?>
+									</span>
+									<a href="<?php echo $image['url']; ?>" class="modal" rel="<?php if(!$restrito){ echo $post->ID; } ?>" title="" data-title="<?php echo $image['title']; ?>">
 										<div class="text-overlay">
 											<div class="info">
 												<span>Ver Foto</span>
@@ -54,12 +65,12 @@
 								</figure>
 							</div>
 
-						<?php endforeach; ?>
+						<?php endforeach;  ?>
 
 					</div>
 
 				<?php endif; ?>
-*/?>
+
 			</div>
 		</session>
 
@@ -84,8 +95,46 @@
 
 <?php endif; ?>
 
+<div class="bg-restrito">
+	<div class="acesso-restrito">
+		<p class="info-restrito"></p>
+		<h2>Digite a sua senha</h2>
+		<input type="password" name="senha-restrito" id="senha-restrito">
+		<button id="entrar" type="text">ENTRAR</button>
+		<span id="close-restrito">CANCELAR</span>
+	</div>
+</div>
 
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+    	jQuery('.info-restrito').html('');
+		var url = window.location.href;
+		var acesso_restrito = url.split('#');
+		if(acesso_restrito.length > 1){
+			jQuery('.bg-restrito ').show();
+		}
 
+		jQuery('#close-restrito').click(function(){
+			jQuery('.bg-restrito ').hide();
+		});
+
+		jQuery('#entrar').click(function(){
+			jQuery('.info-restrito').html('');
+			senha = jQuery('#senha-restrito').val();
+			if(senha=='<?php echo $restrito_ativo; ?>'){
+				jQuery('.bg-restrito ').hide();
+				jQuery('.restrito ').show();
+				jQuery('.modal ').attr('rel','<?php echo $post->ID; ?>');
+				jQuery('.modal ').each(function() {
+				  var title = jQuery(this).attr('data-title');
+				  jQuery(this).attr('title', title);
+				});
+			}else{
+				jQuery('.info-restrito').html('Senha inválida');
+			}
+		});
+    });
+</script>
 
 
 
