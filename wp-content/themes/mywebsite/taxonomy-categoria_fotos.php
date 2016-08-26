@@ -13,9 +13,8 @@ get_header(); ?>
 		<div class="row">
 
 			<header class="archive-page">
-
 				<?php $term = $wp_query->queried_object; ?>
-				<h2><a href="<?php echo get_post_type_archive_link('fotografias'); ?>">Fotografias</a><span><?php echo $term->name; ?></span></h2>
+				<h2>Fotografias<span><?php echo $term->name; ?></span></h2>
 
 				<ul class="social-icons">
 					<li>Compartilhe: </li>

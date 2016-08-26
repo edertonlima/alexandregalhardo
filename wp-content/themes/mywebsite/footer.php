@@ -7,7 +7,7 @@
  */
 ?>
 
-
+<!--
 	<session class="box-page bg bg-cor-bg depoimento">
 		<div class="container">
 			<div class="row">				
@@ -35,6 +35,7 @@
 			</div>
 		</div>
 	</session>
+-->
 
 	<footer class="box-page bg bg-cor-2">
 		<div class="container">

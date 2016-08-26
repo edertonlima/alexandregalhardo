@@ -1,41 +1,23 @@
 <?php
 /**
+ * The template for displaying Archive pages
+ *
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
+ *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each specific one. For example, Twenty Thirteen
+ * already has tag.php for Tag archives, category.php for Category archives,
+ * and author.php for Author archives.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
  * @package WordPress
- * @subpackage My Web
- * @since My web Site 1.0
- **
+ * @subpackage Twenty_Thirteen
+ * @since Twenty Thirteen 1.0
  */
 
 get_header(); ?>
-
-<!--
-<session class="box-page bemvindo">
-	<div class="container">
-		<div class="row">
-			
-			<div class="col-4">
-				<h3>BEM VINDO!</h3>
-				<span>muito obrigado por nos visitar</span>
-				<ul class="social-icons">
-		            <li><a href="javascript:"><i class="fa fa-facebook"></i></a></li>
-		            <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>		            
-		            <li><a href="javascript:"><i class="fa fa-vimeo"></i></a></li>
-		            <li><a href="javascript:"><i class="fa fa-pinterest"></i></a></li>
-		        </ul>
-				
-				<img class="livro-nupcial" src="<?php echo get_template_directory_uri(); ?>/assets/images/livro-nupcial.png" alt="">
-			</div>
-
-			<div class="col-8">
-				<iframe src="https://player.vimeo.com/video/129098941" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			</div>
-
-		</div>
-	</div>
-</session>
--->
-
-
 
 <session class="box-page full-portfolio">
 	<div class="container">
@@ -92,25 +74,6 @@ get_header(); ?>
 
         <?php endwhile; ?>
 
-	</div>
-</session>
-
-
-<session class="box-page bg bg-cor-bg">
-	<div class="container">
-		<h2>Quer eternizar o seu momento especial?</h2>
-		<p class="txt-destaque sub-tit">Nós podemos fazer isso por você</p>
-		<a href="<?php echo get_home_url(); ?>/contato" class="button destaque contato" title="Saiba Mais"><strong>Fale Conosco</strong></a>
-	</div>
-</session>
-
-<session class="box-page">
-	<div class="container">
-		<div class="row">
-			<h2>ALEXANDRE GALHARDO | Photography - Videomaker</h2>
-			<p class="txt-destaque sub-tit">Somos um estúdio de <strong>Fotografia e Vídeo Maker Digital</strong>, especialisado em festas e eventos em geral. Gostamos de transformar idéias em coisas bonitas! Momentos em sentimentos!</p>
-			<a href="<?php echo get_home_url(); ?>/sobre" class="button destaque saiba-mais" title="Saiba Mais"><strong>Saiba Mais</strong></a>
-		</div>
 	</div>
 </session>
 

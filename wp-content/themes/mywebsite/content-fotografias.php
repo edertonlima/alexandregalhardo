@@ -31,7 +31,9 @@
 		<session class="full-portfolio">
 			<div class="container">
 
-				<?php $images = get_field('fotos');
+				<?php echo do_shortcode("[huge_it_gallery id='1']"); ?>
+
+<?php /*				<?php $images = get_field('fotos');
 				if( $images ): ?>
 
 					<div class="isotope">
@@ -57,7 +59,7 @@
 					</div>
 
 				<?php endif; ?>
-
+*/?>
 			</div>
 		</session>
 
@@ -81,8 +83,6 @@
 	</article>
 
 <?php endif; ?>
-
-
 
 
 

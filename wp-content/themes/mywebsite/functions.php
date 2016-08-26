@@ -60,7 +60,7 @@
 			'has_archive' => true,
 			'hierarchical' => false,
 			'menu_icon' => 'dashicons-format-video',
-			'supports' => array('title', 'excerpt', 'thumbnail')
+			'supports' => array('title', 'excerpt')
 		);
 
 		register_post_type( 'videos' , $args );
@@ -131,7 +131,7 @@
 		    'hierarchical' => false,
 		    'menu_position' => null,
 		    'menu_icon' => 'dashicons-format-gallery',
-		    'supports' => array('title','editor','thumbnail','excerpt')
+		    'supports' => array('title','thumbnail','excerpt')
 		  );
 
 	    register_post_type( 'fotografias', $args );

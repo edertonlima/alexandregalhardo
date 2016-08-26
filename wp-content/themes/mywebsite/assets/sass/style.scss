@@ -261,7 +261,7 @@ h2 {
 		&::before {
 			content: "/";
 			display: inline-block;
-			padding: 0 15px; 
+			padding: 0 5px; 
 			color: $cor-1;
 		}
 	}
@@ -297,7 +297,7 @@ h4 {
 		&::before {
 			content: "/";
 			display: inline-block;
-			padding: 0 15px;
+			padding: 0 5px;
 			color: $cor-1;
 		}
 
@@ -598,9 +598,6 @@ session.bemvindo {
 
 /* ARRUMAR */
 .full-portfolio {
-	padding-top: 40px;
-	padding-bottom: 0px;
-
 	h2 {
 		padding-top: 100px;
 	}
@@ -657,7 +654,10 @@ button.button {
 .full-portfolio .isotope .item, .full-portfolio .isotope .grid-sizer {
     width: 20%;
 }
-
+.single .full-portfolio .isotope .item, .single .full-portfolio .isotope .grid-sizer, 
+.archive .full-portfolio .isotope .item, .archive .full-portfolio .isotope .grid-sizer {
+    width: (100%)/3;
+}
 .isotope .item {
     float: left;
 }
@@ -916,6 +916,10 @@ footer {
 		a, span {
 			color: #ffffff;
 		}
+
+		span::before {
+			padding: 0 15px;
+		}
 	}
 
 	.social-icons {		
@@ -968,15 +972,7 @@ footer {
 
 		h2 {
 			color: $cor-1;
-
-			a {
-				color: $cor-2;
-			}
 		}
 
-	}
-
-	.full-portfolio {
-		padding-bottom: 100px;
 	}
 }
