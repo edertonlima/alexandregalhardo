@@ -114,7 +114,7 @@ get_header(); ?>
 	</div>
 </session>
 
-<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/isotope-docs.min.js"></script>
 <script type="text/javascript">
 
